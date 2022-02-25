@@ -30,12 +30,12 @@ namespace RTC
 
 		storageItem->clonedPacket.reset();
 		storageItem->originalPacket.reset();
-		storageItem->ssrc                = 0;
-		storageItem->sequenceNumber      = 0;
-		storageItem->timestamp           = 0;
-		storageItem->resentAtMs          = 0;
-		storageItem->sentTimes           = 0;
-		storageItem->rtxEncoded          = false;
+		storageItem->ssrc           = 0;
+		storageItem->sequenceNumber = 0;
+		storageItem->timestamp      = 0;
+		storageItem->resentAtMs     = 0;
+		storageItem->sentTimes      = 0;
+		storageItem->rtxEncoded     = false;
 	}
 
 	void RtpStreamSend::StorageItem::Dump() const
@@ -480,10 +480,10 @@ namespace RTC
 		}
 
 		// Store original packet and some extra info into the retrieved storage item.
-		storageItem->originalPacket      = clonedPacket;
-		storageItem->ssrc                = packet->GetSsrc();
-		storageItem->sequenceNumber      = packet->GetSequenceNumber();
-		storageItem->timestamp           = packet->GetTimestamp();
+		storageItem->originalPacket = clonedPacket;
+		storageItem->ssrc           = packet->GetSsrc();
+		storageItem->sequenceNumber = packet->GetSequenceNumber();
+		storageItem->timestamp      = packet->GetTimestamp();
 	}
 
 	void RtpStreamSend::ClearOldPackets(const RtpPacket* packet)
